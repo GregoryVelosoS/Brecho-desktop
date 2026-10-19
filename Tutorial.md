@@ -25,12 +25,32 @@ projeto_brecho_uc2/
 ├── app.py
 ├── config.py
 ├── database.py
+├── regras_negocio.py
 ├── requirements.txt
 ├── README.md
+├── tema.py
+├── telas/
+│   ├── __init__.py
+│   ├── clientes.py
+│   ├── componentes.py
+│   ├── login.py
+│   ├── menu.py
+│   ├── pedidos.py
+│   └── produtos.py
 │
 └── sql/
     └── schema.sql
 ```
+
+As telas ficam separadas por assunto e são montadas por funções. O arquivo
+`app.py` inicia o sistema e faz a troca entre elas. As cores ficam em
+`tema.py`, enquanto `telas/componentes.py` cria os componentes já estilizados.
+Os cálculos ficam em `regras_negocio.py` para poderem ser reutilizados e
+testados sem abrir a interface gráfica.
+
+O código do projeto é procedural: ele não cria classes próprias, não usa
+herança e não possui `self` ou `super()`. Os componentes do CustomTkinter ainda
+são objetos porque esse é o funcionamento interno da biblioteca.
 
 ---
 
